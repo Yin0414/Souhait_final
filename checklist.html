@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/checklist.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/checklist.js"></script>
+    <script src="js/upbutton.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="begin">
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/Logo.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="header-links">
+                <a href="index.html" class="home-link">回首頁</a>
+                <a href="login.html" class="account-link">
+                    <img src="./img/account-icon.png" alt="Account" class="account-img">
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav" id="nav">
+            <ul class="nav-list" >
+                <li>
+                    <a href="product.html">Bouquets</a>
+                    <div class="submenu">
+                        <a href="product.html">Weekly Bouquet</a>
+                        <a href="product.html">Single Bouquet</a>
+                        <a href="product.html">S Size Bouquet</a>
+                        <a href="product.html">M Size Bouquet</a>
+                        <a href="product.html">L/XL Size Bouquet</a>
+                        <a href="product.html">Tulip Bouquet</a>
+                        <a href="product.html">Rose Bouquet</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">Preserved Flowers</a>
+                    <div class="submenu">
+                        <a href="product.html">Single Preserved</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">Wedding Items</a>
+                    <div class="submenu">
+                        <a href="product.html">Boutonnière</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">Materials</a>
+                    <div class="submenu">
+                        <a href="product.html">Vase</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">Courses</a>
+                    <div class="submenu">
+                        <a href="product.html">Online Classes</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">More</a>
+                    <div class="submenu">
+                        <a href="checklist.html">Order</a>
+                        <a href="login.html">Member</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="shopping-container">
+        <!-- Product Information -->
+        <section class="product-info">
+            <div class="information">
+                <p>商品介紹>歲月青語</p>
+            </div>
+        
+            <!-- Product Details -->
+            <div class="product-item">
+                <img src="./img/p01.jpg" alt="歲月青語圖片" class="product-img">
+                <div class="product-details">
+                    <h2>歲月青語</h2>
+                    <p>單價：$2200</p>
+
+                    <!-- Quantity -->
+                    <label for="quantity">數量：</label>
+                    <select id="quantity" class="product-quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <p>小計：<span id="product-subtotal">$2200</span></p>
+                </div>
+            </div>
+
+            <!-- Store Information -->
+            <div class="store-info">
+                <p>▌注意事項<br>
+                    △ 花禮預訂後恕無法取消或更改，若需延遲領取或配送，請提前與我們聯繫協調。<br>
+                    △ 配送時間可能受天候或交通情況影響，敬請理解。<br>
+                    △ 如花束在運送過程中受損，請於收花後即時拍照並聯繫我們，我們將盡力協助處理。<br>
+                    △ 請確認收件地址無誤，如因地址錯誤造成的二次配送，將酌收額外運費。</p>
+                <p>▌門市資訊<br>
+                    △ 地址：台北市大安區忠孝東路三段1號<br>
+                    △ 聯絡電話：02-1234-5678</p>
+            </div>
+        </section>
+
+        <!-- Order Information -->
+        <section class="order-info">
+            <h2>訂單資訊</h2>
+            
+            <!-- Order Details -->
+            <div class="order-details">
+                <p>商品小計：$<span id="order-subtotal">2200</span></p>
+
+                <!-- Pickup -->
+                <label for="pickup-method">取貨方式：</label>
+                <select id="pickup-method">
+                    <option value="in-store">門市取貨</option>
+                    <option value="delivery">宅配到府</option>
+                </select>
+
+                <!-- Payment -->
+                <label for="payment-method">付款方式：</label>
+                <select id="payment-method">
+                    <option value="credit-card">信用卡</option>
+                    <option value="bank-transfer">銀行轉帳</option>
+                    <option value="cash-on-delivery">貨到付款</option>
+                </select>
+            </div>
+
+            <div class="order-total">
+                <p>運費：$<span id="shipping-cost">0</span></p>
+                <p>合計：$<span id="order-total">2200</span></p>
+            </div>
+
+        </section>
+    </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>聯絡電話：02-1234-5678 | 地址：台北市大安區忠孝東路三段1號 | 營業時間：週二至週日 10：00~19：30，週一公休</p>
+        </footer>
+
+        <a href="#" class="back-to-top">
+            <img src="./img/up button.png" alt="回到頂端" />
+        </a>
+    </body>
+</html>

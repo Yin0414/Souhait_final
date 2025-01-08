@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap');
+
+html {
+    background-color: #eaeaea;
+    box-sizing: border-box;
+}
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Noto Sans, sans-serif;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Header */
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+/* Header container */
+.begin {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    padding: 40px 160px;
+}
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px auto;
+    background-color: #73628a;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-img {
+    width: 300px;
+    height: auto;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin-left: auto; 
+}
+
+.home-link {
+    font-size: 24px;
+    color: #73628a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
+.account-link {
+    display: inline-block;
+}
+
+.account-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.account-img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+
+.nav {
+    display: flex;
+    font-family: Rasa, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #73628a;
+    text-align: center;
+    letter-spacing: 4px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 160px; 
+    box-sizing: border-box; 
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0px;
+    padding: 0;
+    width: 100%; 
+}
+
+.nav-list li {
+    position: relative;
+    flex-grow: 1;
+    text-align: center; 
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #eaeaea;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #eaeaea;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: #eaeaea;
+}
+
+.submenu {
+    display: block;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background-color: white;
+    padding: 20px 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    z-index: 5;
+}
+
+.submenu a {
+    display: block;
+    padding: 8px 15px;
+    color: #73628a;
+    text-align: left;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.submenu a:hover {
+    font-weight: 600;
+    color: #73628a;
+}
+
+.nav-list li:hover .submenu {
+    visibility: visible; 
+    opacity: 1;
+}
+
+/*Slideshow*/
+.slideshow {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1600px;
+    height: 800px;
+    position: relative;
+}
+
+.slide {
+    width: 1600px;
+    height: 800px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer; 
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Philosophy */
+.philosophy {
+    padding: 40px 20px;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.line {
+    font-size: 35px;
+    color: #73628a;
+    gap: 15px;
+}
+
+.philosophy h2 {
+    font-size: 35px;
+    color: #73628a;
+}
+.en-font{ 
+    font-family: Rasa, sans-serif; 
+} 
+.cn-font{ 
+    font-family: Noto Serif TC, sans-serif; 
+}
+
+.philosophy p {
+    font-size: 20px;
+    color: #666;
+    line-height: 160%;
+    letter-spacing: 2px;
+}
+
+.line::before,
+.line::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 1px;
+    background-color: #73628a;
+}
+
+.line::before {
+    margin-right: 10px;
+}
+
+.line::after {
+    margin-left: 10px;
+}
+
+/*Category*/
+.category {
+    padding-top: 65px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-top: 1.5px solid #73628a;
+    width: 1200px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.category a img {
+    width: 200px; 
+    height: 200px;
+    transition: transform 0.2s; 
+}
+
+.category a img:hover {
+    transform: scale(1.05); 
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #73628a;
+    color: #eaeaea;
+    margin-top: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* Up Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    width: 50px; 
+    height: 50px;
+    z-index: 1000; 
+    display: none; 
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover img {
+    opacity: 0.8; 
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .begin {
+        padding: 40px 60px;
+    }
+
+    .logo-img {
+        width: 200px;
+        height: auto;
+    }
+
+    .home-link {
+        font-size: 20px;
+    }
+
+    .account-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header-links {
+        gap: 20px;
+    }
+
+    .nav {
+        display: none; 
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        background-color: #73628a;
+        z-index: 10;
+    }
+
+    .hamburger {
+        display: block; 
+        cursor: pointer;
+    }
+
+    .nav.active {
+        display: block;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #73628a;
+        width: 100%; 
+    }
+
+    .nav-list li {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        color: #eaeaea;
+        font-size: 24px;
+    }
+
+    .submenu a {
+        font-size: 20px;
+    }
+
+    .login-form {
+        padding: 10px 50px;
+    }
+
+    .slideshow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;  
+    }
+
+    .slide-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;  
+        height: auto;  
+        position: relative;
+    }
+
+    .slide {
+        width: 100%;  
+        height: auto;  
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .slide.active {
+        opacity: 1;
+        position: relative;
+    }
+
+    /* Philosophy */
+    .philosophy {
+        padding: 30px 20px;
+        text-align: center;
+        letter-spacing: 4px;
+        width: 100%;  
+        box-sizing: border-box;  
+    }
+
+    .line {
+        font-size: 30px; 
+        color: #73628a;
+        gap: 15px;
+    }
+
+    .philosophy h2 {
+        font-size: 20px; 
+        color: #73628a;
+    }
+
+    .philosophy p {
+        font-size: 12px;
+        color: #666;
+        line-height: 160%;
+        letter-spacing: 2px;
+    }
+
+    .line::before,
+    .line::after {
+        content: "";
+        display: inline-block;
+        width: 120px;
+        height: 1px;
+        background-color: #73628a;
+    }
+    
+    .line::before {
+        margin-right: 5px;
+    }
+    
+    .line::after {
+        margin-left: 5px;
+    }
+
+    /* Category */
+    .category {
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 40px; 
+        border-top: 1.5px solid #73628a;
+        width: 100%;  
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    .category {
+        border-top: 1.5px solid #73628a;
+        width: 640px;
+        margin: 0 auto;
+    }
+
+    .category a img {
+        width: 120px; 
+        height: 120px; 
+        transition: transform 0.2s;
+    }
+
+    .category a img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #73628a;
+        color: #eaeaea;
+        margin-top: 50px;
+        letter-spacing: 2px;
+        width: 100%;  
+        box-sizing: border-box;  
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .back-to-top img {
+        width: 80%;
+        height: 80%;
+    }
+
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .begin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 30px 50px; 
+    }
+
+    .logo-img {
+        width: 150px;
+        height: auto;
+    }
+    
+    .home-link {
+        font-size: 16px;
+    }  
+    
+    .header-links {
+        gap: 10px;
+    }
+
+        .hamburger {
+        display: block;
+    }
+
+    .home-link {
+        font-size: 12px;
+    }
+    .account-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        background-color: #73628a;
+        z-index: 10;
+    }
+
+    .nav.active {
+        display: block;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #73628a;
+    }
+
+    .nav-list li {
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        color: #eaeaea;
+        font-size: 16px;
+    }
+
+    .submenu a {
+        font-size: 12px;
+    }
+
+    /* Philosophy */
+    .philosophy {
+        padding: 30px 20px;
+        text-align: center;
+        letter-spacing: 4px;
+        width: 100%; 
+        box-sizing: border-box;  
+    }
+
+    .philosophy h2 {
+        font-size: 16px;  
+        color: #73628a;
+    }
+
+    .philosophy p {
+        font-size: 10px;  
+        color: #666;
+        line-height: 160%;
+        letter-spacing: 2px;
+    }
+
+    /* Category */
+    .category {
+        padding-top: 40px;
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: center;  
+        gap: 20px; 
+        border-top: 1.5px solid #73628a;
+        width: 440px;
+        object-fit: cover;
+    }
+
+    .category a {
+        width: 45%;  
+        height: auto;
+    }
+
+    .category a img {
+        width: 200px;  
+        height: 200px; 
+        transition: transform 0.2s;
+    }
+
+    .category a img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #73628a;
+        color: #eaeaea;
+        margin-top: 50px;
+        letter-spacing: 2px;
+        width: 100%;  
+        box-sizing: border-box; 
+        }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 5px; 
+        z-index: 1000; 
+        display: none; 
+    }
+
+    .back-to-top img {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

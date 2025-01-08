@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap');
+
+html {
+    background-color: #eaeaea;
+    box-sizing: border-box;
+}
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Noto Sans, sans-serif;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Header */
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.begin {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+    padding: 40px 160px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px auto;
+    background-color: #73628a;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.logo-img {
+    width: 300px;
+    height: auto;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin-left: auto; 
+}
+
+.home-link {
+    font-size: 24px;
+    color: #73628a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
+.account-link {
+    display: inline-block;
+}
+
+.account-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.account-img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+
+.nav {
+    display: flex;
+    font-family: Rasa, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #73628a;
+    text-align: center;
+    letter-spacing: 4px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 160px;
+    box-sizing: border-box;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0px;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-list li {
+    position: relative;
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #eaeaea;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #eaeaea;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: #eaeaea;
+}
+
+.submenu {
+    display: block;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background-color: white;
+    padding: 20px 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    z-index: 5;
+}
+
+.submenu a {
+    display: block;
+    padding: 8px 15px;
+    color: #73628a;
+    text-align: left;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.submenu a:hover {
+    font-weight: 600;
+    color: #73628a;
+}
+
+.nav-list li:hover .submenu {
+    visibility: visible; 
+    opacity: 1; 
+}
+
+/*Login*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0px 200px 0px;
+}
+
+/* Login Form */
+.login-form {
+    width: 400px;
+    height: 400px;
+    padding: 20px 50px; 
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form Title */
+.form-title {
+    font-size: 30px;
+    color: #666;
+}
+
+/* Labels and Input Fields */
+label {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Login Link */
+.login-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #cbc5ea;
+    padding: 10px 0px;
+    border-radius: 8px;
+    letter-spacing: 4px;
+}
+
+.login-link:hover {
+    background-color: #73628a;
+}
+
+/* Form Footer Links */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.register-link,
+.forgot-password-link {
+    font-size: 16px;
+    color: #73628a;
+    text-decoration: none;
+}
+
+.register-link:hover,
+.forgot-password-link:hover {
+    text-decoration: none;
+    color: #cbc5ea;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #73628a;
+    color: #eaeaea;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* Up Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    width: 50px; 
+    height: 50px;
+    z-index: 5; 
+    display: none; 
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover img {
+    opacity: 0.8; 
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .begin {
+        padding: 40px 60px; 
+    }
+
+    .logo-img {
+        width: 200px;
+        height: auto;
+    }
+
+    .home-link {
+        font-size: 20px;
+    }
+
+    .account-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header-links {
+        gap: 20px;
+    }
+
+    .nav {
+        display: none; 
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        background-color: #73628a;
+        z-index: 10;
+    }
+
+    .hamburger {
+        display: block; 
+        cursor: pointer;
+    }
+
+    .nav.active {
+        display: block;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #73628a;
+        width: 100%; 
+    }
+
+    .nav-list li {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        color: #eaeaea;
+        font-size: 24px;
+    }
+
+    .submenu a {
+        font-size: 20px;
+    }
+
+    .login-form {
+        padding: 10px 50px;
+    }
+
+    .footer {
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .back-to-top img {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .begin {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+        padding: 30px 50px; 
+    }
+
+    .logo-img {
+        width: 150px;
+        height: auto;
+    }
+    
+    .home-link {
+        font-size: 16px;
+    }  
+    
+    .header-links {
+        gap: 10px;
+    }
+
+        .hamburger {
+        display: block;
+    }
+
+    .home-link {
+        font-size: 12px;
+    }
+    .account-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        background-color: #73628a;
+        z-index: 10;
+    }
+
+    .nav.active {
+        display: block;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #73628a;
+    }
+
+    .nav-list li {
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        color: #eaeaea;
+        font-size: 16px;
+    }
+
+    .submenu a {
+        font-size: 12px;
+    }
+
+    .login-form {
+        padding: 10px 50px;
+    }
+
+    .footer {
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .back-to-top img {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
